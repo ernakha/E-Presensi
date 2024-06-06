@@ -30,4 +30,5 @@ Route::prefix('presen')->group(function () {
     Route::get('/edit/{id}', [PresenController::class, 'edit'])->name('presen.edit');
     Route::post('/update/{id}', [PresenController::class, 'update'])->name('presen.update');
     Route::get('/hapus/{id}', [PresenController::class, 'delete'])->name('presen.delete');
+    Route::get('/excel-export', [PresenController::class, 'export'])->name('presen.export');
 });

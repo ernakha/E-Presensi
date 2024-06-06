@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PresenExport;
 use App\Models\Guru;
 use App\Models\Presen;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PresenController extends Controller
 {
@@ -49,8 +51,8 @@ class PresenController extends Controller
         return redirect()->route('presen.view')->with('message', 'data presen berhasil dihapus!');
     }
     
-    // public function export(){
-    //     return Excel::download(new Exportpresen, 'Pemesanan.xlsx');
-    // }
+    public function export(){
+        return Excel::download(new PresenExport, 'Presensi.xlsx');
+    }
 
 }
