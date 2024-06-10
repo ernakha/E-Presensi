@@ -18,14 +18,13 @@ class PresenController extends Controller
 
     public function add(){
         $datapresen = Presen::all();
-        $dataguru = Guru::all();
-        return view('admin.presen.add_presen', compact('datapresen', 'dataguru'));
+        return view('admin.presen.add_presen', compact('datapresen'));
     }
 
     public function store(Request $request){
         $datapresen = new Presen();
         $datapresen->id = $request->id;
-        $datapresen->guru_id = $request->guru_id;
+        $datapresen->guru = $request->guru;
         $datapresen->keterangan = $request->keterangan;
         $datapresen->save();
         return redirect()->route('presen.view')->with('message', 'Data berhasil ditambahkan!');
@@ -33,13 +32,12 @@ class PresenController extends Controller
 
     public function edit($id){
         $editpresen = Presen::find($id);
-        $dataguru = Guru::all();
-        return view('admin.presen.edit_presen', compact('editpresen', 'dataguru'));
+        return view('admin.presen.edit_presen', compact('editpresen'));
     }
 
     public function update(Request $request, $id){
         $datapresen = Presen::find($id);
-        $datapresen->guru_id = $request->guru_id;
+        $datapresen->guru = $request->guru;
         $datapresen->keterangan = $request->keterangan;
         $datapresen->update();
         return redirect()->route('presen.view')->with('message', 'data presen berhasil diubah!');

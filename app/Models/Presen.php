@@ -11,8 +11,4 @@ class Presen extends Model
     protected $table = 'presen';
     protected $primaryKey = 'id';
     public $timestamps = true;
-    
-    public function guru(){
-        return $this->belongsTo(Guru::class, 'guru_id', 'id');
-    }
 }
