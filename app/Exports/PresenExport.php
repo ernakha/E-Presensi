@@ -14,4 +14,11 @@ class PresenExport implements FromCollection
     {
         return Presen::all();
     }
+    public function model(array $row)
+    {
+        return new Presen([
+            'guru_nama' => 2,
+            
+        ]);
+    }
 }
