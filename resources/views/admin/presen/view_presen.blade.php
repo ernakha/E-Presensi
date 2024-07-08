@@ -32,7 +32,7 @@
                             @foreach ($datapresen as $item)
                             <tr>
                                 <td><center>{{$loop->iteration}}<center></td>
-                                <td>{{$item->guru->nama}}</td>
+                                <td>{{$item->guru}}</td>
                                 <td>{{$item->keterangan}}</td>
                                 <td><center>{{$item->created_at}}<center></td>
                                 <td colspan="2"><center>

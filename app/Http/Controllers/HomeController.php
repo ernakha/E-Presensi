@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Guru;
+use App\Models\Presen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,8 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
         $guru = Guru::count();
-        return view('admin.index', compact('guru'));
+        $presen = Presen::count();
+        if($user = Auth::user()){
+            if($user->level == 'admin'){
+                return view('admin.index', compact('guru', 'presen'));
+            }elseif ($user->level == 'guru'){
+                return view('guru.index', compact('guru', 'presen'));
+            }
+        }
     }
 }
