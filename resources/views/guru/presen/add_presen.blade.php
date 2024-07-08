@@ -14,27 +14,16 @@
         <div class="card-body">
             <form action="{{ route('gurupresen.store') }}" method="POST">
                 @csrf
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col">
-                            <label for="kategori" class="form-label">Nama Guru</label>
-                            <select type="select" class="form-control" name="guru" required>
-                                <option selected>Pilih</option>
-                                <option value="Abdul Aziz, S.Sos.i.">Abdul Aziz, S.Sos.i.</option>
-                                <option value="Moh. Sholeh Hadi Muslim, S.PdI.">Moh. Sholeh Hadi Muslim, S.PdI.</option>
-                                <option value="Anik Kholifatuz Zahro', S.Si.">Anik Kholifatuz Zahro', S.Si.</option>
-                                <option value="Insan Solihin, S.Pd.">Insan Solihin, S.Pd.</option>
-                                <option value="Miftakhul Jannah, S.Pd.">Miftakhul Jannah, S.Pd.</option>
-                                <option value="Tutut Triyastutik, S.T.">Tutut Triyastutik, S.T.</option>
-                                <option value="Ari Wicaksono, S.Pd.">Ari Wicaksono, S.Pd.</option>
-                                <option value="Rizani Annisa', S.Pd.">Rizani Annisa', S.Pd.</option>
-                                <option value="Rafie Khan Rahman, S.E.">Rafie Khan Rahman, S.E.</option>
-                                <option value="Syaiful Arifin">Syaiful Arifin</option>
-                                <option value="Jannaitun Naimah">Jannaitun Naimah</option>
-                                <option value="Daimatul Mukhimah">Daimatul Mukhimah</option>
-                            </select>
-                        </div>
-                    </div>
+                <div class="col">
+                    <label for="inputEmail4" class="form-label">Nama</label>
+                    <select class="form-control" name="users_id" aria-label="Default select example" required>
+                        <option selected>Pilih users</option>
+                        @foreach ($data as $users)
+                        <option value="{{ $users->id }}">
+                            {{ $users->name}}
+                        </option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="mb-3">
                     <div class="row">
