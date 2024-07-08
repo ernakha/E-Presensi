@@ -7,8 +7,6 @@
             <h1 class="h3 mb-0 text-gray-800">Presensi</h1>
             <a href="{{ route('presen.export') }}" class="d-none d-sm-inline-block btn btn-success shadow"><i
                     class="mdi mdi-playlist-plus"></i> Unduh</a>
-            <a href="{{ route('presen.add') }}" class="d-none d-sm-inline-block btn btn-success shadow"><i
-                    class="mdi mdi-playlist-plus"></i> Ayo Presensi!</a>
         </div>
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
