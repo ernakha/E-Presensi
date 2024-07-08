@@ -11,4 +11,9 @@ class Presen extends Model
     protected $table = 'presen';
     protected $primaryKey = 'id';
     public $timestamps = true;
+    protected $fillable = ['users_id','keterangan'];
+
+    public function user(){
+        return $this->belongsTo(User::class, 'users_id', 'id');
+    }
 }
