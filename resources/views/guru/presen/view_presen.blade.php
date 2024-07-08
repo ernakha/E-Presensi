@@ -26,7 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($datapresen as $item)
+                            @foreach ($data as $item)
                             <tr>
                                 <td><center>{{$loop->iteration}}<center></td>
                                 <td>{{$item->user->name}}</td>

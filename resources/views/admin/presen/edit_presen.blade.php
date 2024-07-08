@@ -16,11 +16,11 @@
                 @csrf
                 <div class="col">
                     <label for="inputEmail4" class="form-label">Nama</label>
-                    <select class="form-control" name="users_id" aria-label="Default select example" required>
-                        <option value="{{$editpresen->users_id}}" selected>{{$editpresen->users->name}}</option>
-                        @foreach ($data as $users)
-                        <option value="{{ $users->id }}">
-                            {{ $users->name}}
+                    <select class="form-control" name="user_id" aria-label="Default select example" required>
+                        <option value="{{$editpresen->user_id}}" selected>{{$editpresen->user->name}}</option>
+                        @foreach ($data as $user)
+                        <option value="{{ $user->id }}">
+                            {{ $user->name}}
                         </option>
                         @endforeach
                     </select>
