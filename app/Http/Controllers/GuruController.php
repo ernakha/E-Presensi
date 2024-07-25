@@ -32,7 +32,7 @@ class GuruController extends Controller
 
     public function edit($id){
         $editguru = Guru::find($id);
-        return view('guru.edit_guru', compact('editguru'));
+        return view('admin.guru.edit_guru', compact('editguru'));
     }
 
     public function update(Request $request, $id){
